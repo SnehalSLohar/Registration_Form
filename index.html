@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <center>
+      <table class="table">
+        <thead class="thead-light">
+          <tr class="trow">
+            <th scope="col">First Name</th>
+            <td><input type="text" required name="fname" id="fname" /></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="trow">
+            <th scope="row">Last Name</th>
+            <td><input type="text" required name="lname" id="lname" /></td>
+          </tr>
+          <tr class="trow">
+            <th scope="row">Email</th>
+            <td><input type="email" requiredname="email" id="email" /></td>
+          </tr>
+          <tr class="trow">
+            <th scope="row">Mobile number</th>
+            <td><input type="tel" required name="mobno" id="mobno" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input
+        type="button"
+        name="button"
+        id="btn"
+        value="Add to List"
+        onclick="AddRow()"
+      />
+
+      <table class="table rtable" id="show">
+        <thead class="thead-light">
+          <tr class="trow">
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+      </table>
+    </center>
+
+    <script>
+      var list1 = [];
+      var list2 = [];
+      var list3 = [];
+      var list4 = [];
+
+      var n = 1;
+      var x = 0;
+
+      function AddRow() {
+        var AddRown = document.getElementById("show");
+        var NewRow = AddRown.insertRow(n);
+
+        list1[x] = document.getElementById("fname").value;
+        list2[x] = document.getElementById("lname").value;
+        list3[x] = document.getElementById("email").value;
+        list4[x] = document.getElementById("mobno").value;
+
+        var cel1 = NewRow.insertCell(0);
+        var cel2 = NewRow.insertCell(1);
+        var cel3 = NewRow.insertCell(2);
+        var cel4 = NewRow.insertCell(3);
+
+        cel1.innerHTML = list1[x];
+        cel2.innerHTML = list2[x];
+        cel3.innerHTML = list3[x];
+        cel4.innerHTML = list4[x];
+
+        n++;
+        x++;
+      }
+    </script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
