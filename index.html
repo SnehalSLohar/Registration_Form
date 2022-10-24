@@ -67,7 +67,12 @@
 
       var n = 1;
       var x = 0;
-
+      function reset() {
+        document.getElementById("fname").value = "";
+        document.getElementById("lname").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("mobno").value = "";
+      }
       function AddRow() {
         var AddRown = document.getElementById("show");
         var NewRow = AddRown.insertRow(n);
@@ -89,6 +94,7 @@
 
         n++;
         x++;
+        reset();
       }
     </script>
 
